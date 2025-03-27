@@ -10,11 +10,11 @@
 
 
 <p align="center">
-  <a href="https://github.com/zakaBouj?tab=repositories"><img src="https://img.shields.io/badge/Stars-99999-yellow?style=flat&logo=github" alt="Stars"></a>
-  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Commits-99999-brightgreen?style=flat&logo=git" alt="Commits"></a>
-  <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-99999-purple?style=flat&logo=github" alt="PRs"></a>
-  <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-99999-red?style=flat&logo=github" alt="Issues"></a>
-  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-99999-blueviolet?style=flat&logo=github" alt="Contributions"></a>
+  <a href="https://github.com/zakaBouj?tab=repositories"><img src="https://img.shields.io/badge/Stars-0-yellow?style=flat&logo=github" alt="Stars"></a>
+  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git" alt="Commits"></a>
+  <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-101-purple?style=flat&logo=github" alt="PRs"></a>
+  <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-130-red?style=flat&logo=github" alt="Issues"></a>
+  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-958-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 
 
