@@ -307,19 +307,15 @@ def generate_stats_markdown():
     # Combine all stats
     stats = {**user_stats, **contribution_stats, **commit_stats, **loc_stats}
     
-    # Format stats into shield.io badges to match README style
+    # Format stats into shield.io badges to match README style - filtered to just the most important ones
     markdown = """
 ## GitHub Stats
 
-![Repositories](https://img.shields.io/badge/Repos-{repos}-blue?style=flat&logo=github) ![Contributed](https://img.shields.io/badge/Contributed-{contributed_to}-blue?style=flat&logo=github) | ![Stars](https://img.shields.io/badge/Stars-{stars}-yellow?style=flat&logo=github)
-
-![Commits](https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=flat&logo=git) | ![Followers](https://img.shields.io/badge/Followers-{followers}-lightgrey?style=flat&logo=github)
-
-![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-{net_lines}-informational?style=flat&logo=github) (![Added](https://img.shields.io/badge/+{lines_added}-success?style=flat&logo=github) ![Deleted](https://img.shields.io/badge/-{lines_deleted}-critical?style=flat&logo=github))
-
-![Pull Requests](https://img.shields.io/badge/Pull%20Requests-{pull_requests}-purple?style=flat&logo=github) | ![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github) | ![Reviews](https://img.shields.io/badge/Reviews-{reviews_year}-blue?style=flat&logo=github)
-
-![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-{total_contributions_year}-blueviolet?style=flat&logo=github) | ![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-{commits_year}-green?style=flat&logo=git)
+![Stars](https://img.shields.io/badge/Stars-{stars}-yellow?style=flat&logo=github)
+![Commits](https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=flat&logo=git)
+![Pull Requests](https://img.shields.io/badge/Pull%20Requests-{pull_requests}-purple?style=flat&logo=github)
+![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github)
+![Contributions (Year)](https://img.shields.io/badge/Contributions-{total_contributions_year}-blueviolet?style=flat&logo=github)
 """.format(**stats)
 
     return markdown
