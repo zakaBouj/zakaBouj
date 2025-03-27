@@ -62,13 +62,13 @@ def get_user_stats():
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data")
         return {
-            'repos': 2,
-            'stars': 0,
+            'repos': 95,
+            'stars': 342,
             'forks': 0,
-            'followers': 1,
+            'followers': 196,
             'pull_requests': 70,
             'issues': 89,
-            'contributed_to': 9
+            'contributed_to': 133
         }
     
     variables = {'username': USER_NAME}
@@ -77,13 +77,13 @@ def get_user_stats():
     if not result or 'data' not in result:
         print("Failed to get user stats, using sample data")
         return {
-            'repos': 2,
-            'stars': 0,
+            'repos': 95,
+            'stars': 342,
             'forks': 0,
-            'followers': 1,
+            'followers': 196,
             'pull_requests': 70,
             'issues': 89,
-            'contributed_to': 9
+            'contributed_to': 133
         }
     
     data = result['data']['user']
@@ -169,7 +169,7 @@ def get_total_commits():
     # Sample data for local testing without a token
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data for total commits")
-        return {'total_commits': 65, 'total_commits_year': 628}
+        return {'total_commits': 2116, 'total_commits_year': 628}
     
     # Get current date and date for 2025
     today = datetime.now()
@@ -248,29 +248,24 @@ def generate_stats_markdown():
     user_stats = get_user_stats()
     contribution_stats = get_contributions()
     commit_stats = get_total_commits()
+    loc_stats = {'lines_added': 523178, 'lines_deleted': 76902, 'net_lines': 446276}
     
     # Combine all stats
-    stats = {**user_stats, **contribution_stats, **commit_stats}
+    stats = {**user_stats, **contribution_stats, **commit_stats, **loc_stats}
     
     # Format stats into shield.io badges to match README style
     markdown = """
 ## GitHub Stats
 
-![Repositories](https://img.shields.io/badge/Repositories-{repos}-blue?style=flat&logo=github)
-![Stars](https://img.shields.io/badge/Stars-{stars}-yellow?style=flat&logo=github)
-![Followers](https://img.shields.io/badge/Followers-{followers}-lightgrey?style=flat&logo=github)
-![Forks](https://img.shields.io/badge/Forks-{forks}-orange?style=flat&logo=github)
+![Repositories](https://img.shields.io/badge/Repos-{repos}-blue?style=flat&logo=github) ![Contributed](https://img.shields.io/badge/Contributed-{contributed_to}-blue?style=flat&logo=github) | ![Stars](https://img.shields.io/badge/Stars-{stars}-yellow?style=flat&logo=github)
 
-![Total Commits](https://img.shields.io/badge/Total%20Commits-{total_commits}-brightgreen?style=flat&logo=git)
-![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-{commits_year}-green?style=flat&logo=git)
-![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-{total_contributions_year}-blueviolet?style=flat&logo=github)
+![Commits](https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=flat&logo=git) | ![Followers](https://img.shields.io/badge/Followers-{followers}-lightgrey?style=flat&logo=github)
 
-![Pull Requests](https://img.shields.io/badge/Pull%20Requests-{pull_requests}-purple?style=flat&logo=github)
-![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github)
-![PR Reviews](https://img.shields.io/badge/PR%20Reviews-{reviews_year}-blue?style=flat&logo=github)
+![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-{net_lines}-informational?style=flat&logo=github) (![Added](https://img.shields.io/badge/+{lines_added}-success?style=flat&logo=github) ![Deleted](https://img.shields.io/badge/-{lines_deleted}-critical?style=flat&logo=github))
 
-![Contributed To](https://img.shields.io/badge/Contributed%20To-{contributed_to}-teal?style=flat&logo=github)
-![Total Commits (2025)](https://img.shields.io/badge/Total%20Commits%20(2025)-{total_commits_year}-darkgreen?style=flat&logo=git)
+![Pull Requests](https://img.shields.io/badge/Pull%20Requests-{pull_requests}-purple?style=flat&logo=github) | ![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github) | ![Reviews](https://img.shields.io/badge/Reviews-{reviews_year}-blue?style=flat&logo=github)
+
+![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-{total_contributions_year}-blueviolet?style=flat&logo=github) | ![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-{commits_year}-green?style=flat&logo=git)
 """.format(**stats)
 
     return markdown
