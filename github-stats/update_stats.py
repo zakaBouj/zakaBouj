@@ -304,18 +304,25 @@ def generate_stats_markdown():
     commit_stats = get_total_commits()
     loc_stats = {'lines_added': 99999, 'lines_deleted': 99999, 'net_lines': 99999}
     
-    # Combine all stats
-    stats = {**user_stats, **contribution_stats, **commit_stats, **loc_stats}
+    # Combine all stats and add username for links
+    stats = {**user_stats, **contribution_stats, **commit_stats, **loc_stats, 'USER_NAME': USER_NAME}
     
-    # Format stats into shield.io badges to match README style - filtered to just the most important ones
+    # Format stats into shield.io badges - optimized for recruiters with better organization and context
     markdown = """
-## GitHub Stats
+<div align="center">
 
-![Stars](https://img.shields.io/badge/Stars-{stars}-yellow?style=flat&logo=github)
-![Commits](https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=flat&logo=git)
-![Pull Requests](https://img.shields.io/badge/Pull%20Requests-{pull_requests}-purple?style=flat&logo=github)
-![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github)
-![Contributions (Year)](https://img.shields.io/badge/Contributions-{total_contributions_year}-blueviolet?style=flat&logo=github)
+### 💻 GitHub Activity & Contributions
+
+[![Stars](https://img.shields.io/badge/⭐%20Stars-{stars}-yellow?style=for-the-badge&logo=github)](https://github.com/{USER_NAME}?tab=repositories)
+[![Commits](https://img.shields.io/badge/🔄%20Commits-{total_commits}-brightgreen?style=for-the-badge&logo=git)](https://github.com/{USER_NAME})
+
+**Collaborative Development**
+
+[![Pull Requests](https://img.shields.io/badge/PRs-{pull_requests}-purple?style=flat&logo=github)](https://github.com/pulls)
+[![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github)](https://github.com/issues)
+[![Year Contributions](https://img.shields.io/badge/2025%20Contributions-{total_contributions_year}-blueviolet?style=flat&logo=github)](https://github.com/{USER_NAME})
+
+</div>
 """.format(**stats)
 
     return markdown

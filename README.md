@@ -15,13 +15,20 @@
 <!-- Live Github Stats -->
 
 
-## GitHub Stats
+<div align="center">
 
-![Stars](https://img.shields.io/badge/Stars-0-yellow?style=flat&logo=github)
-![Commits](https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git)
-![Pull Requests](https://img.shields.io/badge/Pull%20Requests-101-purple?style=flat&logo=github)
-![Issues](https://img.shields.io/badge/Issues-130-red?style=flat&logo=github)
-![Contributions (Year)](https://img.shields.io/badge/Contributions-955-blueviolet?style=flat&logo=github)
+### 💻 GitHub Activity & Contributions
+
+[![Stars](https://img.shields.io/badge/⭐%20Stars-99999-yellow?style=for-the-badge&logo=github)](https://github.com/zakaBouj?tab=repositories)
+[![Commits](https://img.shields.io/badge/🔄%20Commits-99999-brightgreen?style=for-the-badge&logo=git)](https://github.com/zakaBouj)
+
+**Collaborative Development**
+
+[![Pull Requests](https://img.shields.io/badge/PRs-99999-purple?style=flat&logo=github)](https://github.com/pulls)
+[![Issues](https://img.shields.io/badge/Issues-99999-red?style=flat&logo=github)](https://github.com/issues)
+[![Year Contributions](https://img.shields.io/badge/2025%20Contributions-99999-blueviolet?style=flat&logo=github)](https://github.com/zakaBouj)
+
+</div>
 
 
 ***Stats***
