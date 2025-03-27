@@ -326,58 +326,37 @@ def update_readme():
         with open(README_PATH, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Find the <p> tag that contains the "Second Year CS Student" text
+        # First, find the student/developer paragraph
         student_developer_paragraph = '<p align="center">\n  <strong>Second Year CS Student @ Frankfurt UAS | Software Developer @ Digital David AG'
-        
-        # Find this paragraph
         student_paragraph_index = content.find(student_developer_paragraph)
         
         if student_paragraph_index == -1:
-            # Fallback to the stats marker if we can't find the paragraph
-            marker_index = content.find(STATS_MARKER)
+            print("Could not find student/developer paragraph")
+            return False
             
-            if marker_index == -1:
-                print("Stats marker not found in README")
-                return False
-                
-            # Get the content before the marker
-            before_content = content[:marker_index + len(STATS_MARKER)]
-        else:
-            # Find the end of the paragraph (</p>)
-            paragraph_end_index = content.find('</p>', student_paragraph_index)
-            
-            if paragraph_end_index == -1:
-                print("Could not find the end of student/developer paragraph")
-                return False
-                
-            # Get the content before our insertion point (after the </p>)
-            before_content = content[:paragraph_end_index + 4]  # +4 for "</p>"
+        # Find the end of the student/developer paragraph
+        paragraph_end_index = content.find('</p>', student_paragraph_index)
+        if paragraph_end_index == -1:
+            print("Could not find the end of student/developer paragraph")
+            return False
         
-        # Find the next section after our insertion point
-        next_content_start = before_content.rfind("\n\n")
-        if next_content_start == -1:
-            next_content_start = len(before_content)
-            
-        # Find the next section after our stats (look for '***Featured Projects***' or any other section heading)
+        # Get content up to the end of the student/developer paragraph
+        before_content = content[:paragraph_end_index + 4]  # +4 for "</p>"
+        
+        # Find Featured Projects section
         featured_projects_index = content.find("***Featured Projects***")
-        stats_section_index = content.find("***Stats***")
+        if featured_projects_index == -1:
+            print("Could not find Featured Projects section")
+            return False
+            
+        # Define the working on paragraph
+        working_paragraph = "<p align=\"center\">\n  🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.\n</p>"
         
-        # Determine the nearest next section
-        next_section_index = None
-        if featured_projects_index > next_content_start:
-            next_section_index = featured_projects_index
-        if stats_section_index > next_content_start and (next_section_index is None or stats_section_index < next_section_index):
-            next_section_index = stats_section_index
+        # Get content after Featured Projects (we'll reinsert the working paragraph later)
+        after_content = content[featured_projects_index:]
         
-        if next_section_index:
-            # Get content from the next section to the end
-            after_stats = content[next_section_index:]
-        else:
-            # If we can't find a known next section, use everything after the current paragraph
-            after_stats = content[paragraph_end_index + 4:]
-        
-        # Create new README content
-        new_content = before_content + "\n\n" + generate_stats_markdown() + "\n\n" + after_stats
+        # Create new README content with correct order: intro, stats, working on, featured projects
+        new_content = before_content + "\n\n" + generate_stats_markdown() + "\n\n" + working_paragraph + "\n\n" + after_content
         
         # Write the new content
         with open(README_PATH, 'w', encoding='utf-8') as f:
