@@ -307,18 +307,15 @@ def generate_stats_markdown():
     # Combine all stats and add username for links
     stats = {**user_stats, **contribution_stats, **commit_stats, **loc_stats, 'USER_NAME': USER_NAME}
     
-    # Format stats into shield.io badges - optimized for recruiters with better organization and context
+    # Format stats into shield.io badges - all on one line for a compact layout
     markdown = """
-<div align="center">
-
-[![Stars](https://img.shields.io/badge/Stars-{stars}-yellow?style=for-the-badge&logo=github)](https://github.com/{USER_NAME}?tab=repositories)
-[![Commits](https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=for-the-badge&logo=git)](https://github.com/{USER_NAME})
-
-[![Pull Requests](https://img.shields.io/badge/PRs-{pull_requests}-purple?style=flat&logo=github)](https://github.com/pulls)
-[![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github)](https://github.com/issues)
-[![Year Contributions](https://img.shields.io/badge/2025%20Contributions-{total_contributions_year}-blueviolet?style=flat&logo=github)](https://github.com/{USER_NAME})
-
-</div>
+<p align="center">
+  <a href="https://github.com/{USER_NAME}?tab=repositories"><img src="https://img.shields.io/badge/Stars-{stars}-yellow?style=flat&logo=github" alt="Stars"></a>
+  <a href="https://github.com/{USER_NAME}"><img src="https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=flat&logo=git" alt="Commits"></a>
+  <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-{pull_requests}-purple?style=flat&logo=github" alt="PRs"></a>
+  <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github" alt="Issues"></a>
+  <a href="https://github.com/{USER_NAME}"><img src="https://img.shields.io/badge/Contributions-{total_contributions_year}-blueviolet?style=flat&logo=github" alt="Contributions"></a>
+</p>
 """.format(**stats)
 
     return markdown
