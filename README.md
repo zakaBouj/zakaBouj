@@ -11,16 +11,15 @@
 
 <div align="center">
 
-[![Stars](https://img.shields.io/badge/Stars-99999-yellow?style=for-the-badge&logo=github)](https://github.com/zakaBouj?tab=repositories)
-[![Commits](https://img.shields.io/badge/Commits-99999-brightgreen?style=for-the-badge&logo=git)](https://github.com/zakaBouj)
+[![Stars](https://img.shields.io/badge/Stars-0-yellow?style=for-the-badge&logo=github)](https://github.com/zakaBouj?tab=repositories)
+[![Commits](https://img.shields.io/badge/Commits-2116-brightgreen?style=for-the-badge&logo=git)](https://github.com/zakaBouj)
 
 [![Pull Requests](https://img.shields.io/badge/PRs-101-purple?style=flat&logo=github)](https://github.com/pulls)
 [![Issues](https://img.shields.io/badge/Issues-130-red?style=flat&logo=github)](https://github.com/issues)
-[![Year Contributions](https://img.shields.io/badge/2025%20Contributions-956-blueviolet?style=flat&logo=github)](https://github.com/zakaBouj)
+[![Year Contributions](https://img.shields.io/badge/2025%20Contributions-957-blueviolet?style=flat&logo=github)](https://github.com/zakaBouj)
 
 </div>
 
-</br>
 
 ***Featured Projects***
 
