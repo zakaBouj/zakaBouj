@@ -15,6 +15,28 @@
 <!-- Live Github Stats -->
 
 
+## GitHub Stats
+
+![Repositories](https://img.shields.io/badge/Repositories-2-blue?style=flat&logo=github)
+![Stars](https://img.shields.io/badge/Stars-0-yellow?style=flat&logo=github)
+![Followers](https://img.shields.io/badge/Followers-1-lightgrey?style=flat&logo=github)
+![Forks](https://img.shields.io/badge/Forks-0-orange?style=flat&logo=github)
+
+![Total Commits](https://img.shields.io/badge/Total%20Commits-65-brightgreen?style=flat&logo=git)
+![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-65-green?style=flat&logo=git)
+![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-76-blueviolet?style=flat&logo=github)
+
+![Pull Requests](https://img.shields.io/badge/Pull%20Requests-70-purple?style=flat&logo=github)
+![Issues](https://img.shields.io/badge/Issues-89-red?style=flat&logo=github)
+![PR Reviews](https://img.shields.io/badge/PR%20Reviews-0-blue?style=flat&logo=github)
+
+<!-- Additional stats: set during initial run, updated manually through cache -->
+<!-- ![Lines Added](https://img.shields.io/badge/Lines%20Added-0-success?style=flat&logo=github)
+![Lines Deleted](https://img.shields.io/badge/Lines%20Deleted-0-critical?style=flat&logo=github)
+![Net Lines of Code](https://img.shields.io/badge/Net%20Lines%20of%20Code-0-informational?style=flat&logo=github) -->
+
+
+
 ***Stats***
 
 ![Repositories](https://img.shields.io/badge/Repositories-12-blue?style=flat&logo=github)
