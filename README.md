@@ -17,15 +17,15 @@
 
 ## GitHub Stats
 
-![Repositories](https://img.shields.io/badge/Repos-95-blue?style=flat&logo=github) ![Contributed](https://img.shields.io/badge/Contributed-133-blue?style=flat&logo=github) | ![Stars](https://img.shields.io/badge/Stars-342-yellow?style=flat&logo=github)
+![Repositories](https://img.shields.io/badge/Repos-2-blue?style=flat&logo=github) ![Contributed](https://img.shields.io/badge/Contributed-2-blue?style=flat&logo=github) | ![Stars](https://img.shields.io/badge/Stars-0-yellow?style=flat&logo=github)
 
-![Commits](https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git) | ![Followers](https://img.shields.io/badge/Followers-196-lightgrey?style=flat&logo=github)
+![Commits](https://img.shields.io/badge/Commits-68-brightgreen?style=flat&logo=git) | ![Followers](https://img.shields.io/badge/Followers-1-lightgrey?style=flat&logo=github)
 
 ![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-446276-informational?style=flat&logo=github) (![Added](https://img.shields.io/badge/+523178-success?style=flat&logo=github) ![Deleted](https://img.shields.io/badge/-76902-critical?style=flat&logo=github))
 
 ![Pull Requests](https://img.shields.io/badge/Pull%20Requests-70-purple?style=flat&logo=github) | ![Issues](https://img.shields.io/badge/Issues-89-red?style=flat&logo=github) | ![Reviews](https://img.shields.io/badge/Reviews-0-blue?style=flat&logo=github)
 
-![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-76-blueviolet?style=flat&logo=github) | ![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-65-green?style=flat&logo=git)
+![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-79-blueviolet?style=flat&logo=github) | ![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-68-green?style=flat&logo=git)
 
 
 ***Stats***
