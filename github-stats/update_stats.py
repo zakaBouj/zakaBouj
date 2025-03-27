@@ -51,20 +51,24 @@ def get_user_stats():
         issues {
           totalCount
         }
+        repositoriesContributedTo(contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY], first: 100, includeUserRepositories: false) {
+          totalCount
+        }
       }
     }
     """
     
-    # Use a sample data set for local testing (when no valid token is available)
+    # Sample data for local testing without a token
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data")
         return {
-            'repos': 12,
-            'stars': 45,
-            'forks': 8,
-            'followers': 25,
-            'pull_requests': 32,
-            'issues': 18
+            'repos': 2,
+            'stars': 0,
+            'forks': 0,
+            'followers': 1,
+            'pull_requests': 70,
+            'issues': 89,
+            'contributed_to': 9
         }
     
     variables = {'username': USER_NAME}
@@ -73,12 +77,13 @@ def get_user_stats():
     if not result or 'data' not in result:
         print("Failed to get user stats, using sample data")
         return {
-            'repos': 12,
-            'stars': 45,
-            'forks': 8,
-            'followers': 25,
-            'pull_requests': 32,
-            'issues': 18
+            'repos': 2,
+            'stars': 0,
+            'forks': 0,
+            'followers': 1,
+            'pull_requests': 70,
+            'issues': 89,
+            'contributed_to': 9
         }
     
     data = result['data']['user']
@@ -93,7 +98,8 @@ def get_user_stats():
         'forks': total_forks,
         'followers': data['followers']['totalCount'],
         'pull_requests': data['pullRequests']['totalCount'],
-        'issues': data['issues']['totalCount']
+        'issues': data['issues']['totalCount'],
+        'contributed_to': data['repositoriesContributedTo']['totalCount']
     }
 
 def get_contributions():
@@ -102,11 +108,11 @@ def get_contributions():
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data for contributions")
         return {
-            'commits_year': 320,
-            'total_contributions_year': 486,
-            'pull_requests_year': 28,
-            'issues_year': 15,
-            'reviews_year': 42
+            'commits_year': 65,
+            'total_contributions_year': 76,
+            'pull_requests_year': 70,
+            'issues_year': 89,
+            'reviews_year': 0
         }
     
     # Get current date and date from 1 year ago
@@ -141,11 +147,11 @@ def get_contributions():
     if not result or 'data' not in result:
         print("Failed to get contribution stats, using sample data")
         return {
-            'commits_year': 320,
-            'total_contributions_year': 486,
-            'pull_requests_year': 28,
-            'issues_year': 15,
-            'reviews_year': 42
+            'commits_year': 65,
+            'total_contributions_year': 76,
+            'pull_requests_year': 70,
+            'issues_year': 89,
+            'reviews_year': 0
         }
     
     contributions = result['data']['user']['contributionsCollection']
@@ -163,10 +169,15 @@ def get_total_commits():
     # Sample data for local testing without a token
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data for total commits")
-        return {'total_commits': 768}
+        return {'total_commits': 65, 'total_commits_year': 628}
     
-    # This is more complex to get accurately, so we'll use the REST API for a reasonable estimate
+    # Get current date and date for 2025
+    today = datetime.now()
+    start_of_2025 = datetime(2025, 1, 1)
+    
+    # This is more complex to get accurately, so we'll use multiple API calls
     try:
+        # First get total commit count
         total_commits = 0
         page = 1
         per_page = 100
@@ -204,41 +215,42 @@ def get_total_commits():
             if page > 5:  # Limit to checking about 500 repos to avoid rate limits
                 break
         
-        return {'total_commits': total_commits}
+        # Now get commits for 2025
+        query = """
+        query($username: String!, $from: DateTime!, $to: DateTime!) {
+          user(login: $username) {
+            contributionsCollection(from: $from, to: $to) {
+              totalCommitContributions
+            }
+          }
+        }
+        """
+        
+        variables = {
+            'username': USER_NAME,
+            'from': start_of_2025.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            'to': today.strftime('%Y-%m-%dT%H:%M:%SZ')
+        }
+        
+        result = run_graphql_query(query, variables)
+        total_commits_year = 628  # Default
+        
+        if result and 'data' in result:
+            total_commits_year = result['data']['user']['contributionsCollection']['totalCommitContributions']
+        
+        return {'total_commits': total_commits or 65, 'total_commits_year': total_commits_year}
     except Exception as e:
         print(f"Error getting commit data: {e}")
-        return {'total_commits': 768}  # Return sample data on error
-
-def get_lines_of_code():
-    """Get an estimate of total lines of code added/removed"""
-    # This is difficult to calculate accurately via the API without extensive scraping
-    # For simplicity, we'll use a placeholder or a cached value
-    
-    # Check if we have a cached value
-    cache_path = 'github-stats/cache/loc_stats.json'
-    try:
-        if os.path.exists(cache_path):
-            with open(cache_path, 'r') as f:
-                return json.load(f)
-    except Exception as e:
-        print(f"Error reading cache: {e}")
-    
-    # If no cache or error, return default values
-    return {
-        'lines_added': 0,
-        'lines_deleted': 0,
-        'net_lines': 0
-    }
+        return {'total_commits': 65, 'total_commits_year': 628}  # Return sample data on error
 
 def generate_stats_markdown():
     """Generate Markdown for GitHub stats section"""
     user_stats = get_user_stats()
     contribution_stats = get_contributions()
     commit_stats = get_total_commits()
-    loc_stats = get_lines_of_code()
     
     # Combine all stats
-    stats = {**user_stats, **contribution_stats, **commit_stats, **loc_stats}
+    stats = {**user_stats, **contribution_stats, **commit_stats}
     
     # Format stats into shield.io badges to match README style
     markdown = """
@@ -257,10 +269,8 @@ def generate_stats_markdown():
 ![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github)
 ![PR Reviews](https://img.shields.io/badge/PR%20Reviews-{reviews_year}-blue?style=flat&logo=github)
 
-<!-- Additional stats: set during initial run, updated manually through cache -->
-<!-- ![Lines Added](https://img.shields.io/badge/Lines%20Added-{lines_added}-success?style=flat&logo=github)
-![Lines Deleted](https://img.shields.io/badge/Lines%20Deleted-{lines_deleted}-critical?style=flat&logo=github)
-![Net Lines of Code](https://img.shields.io/badge/Net%20Lines%20of%20Code-{net_lines}-informational?style=flat&logo=github) -->
+![Contributed To](https://img.shields.io/badge/Contributed%20To-{contributed_to}-teal?style=flat&logo=github)
+![Total Commits (2025)](https://img.shields.io/badge/Total%20Commits%20(2025)-{total_commits_year}-darkgreen?style=flat&logo=git)
 """.format(**stats)
 
     return markdown
@@ -271,25 +281,40 @@ def update_readme():
         with open(README_PATH, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Find the stats marker and create the new content
+        # Find the stats marker
         marker_index = content.find(STATS_MARKER)
         
         if marker_index == -1:
             print("Stats marker not found in README")
             return False
         
-        # Get the content before and after the marker
+        # Get the content before the marker
         before_marker = content[:marker_index + len(STATS_MARKER)]
         
-        # Find end of the stats section (next heading or end of file)
-        next_section_match = re.search(r'\n\s*\n', content[marker_index:])
-        if next_section_match:
-            after_stats = content[marker_index + next_section_match.start():]
+        # Find the next section after our stats (look for '***Featured Projects***' or any other section heading)
+        featured_projects_index = content.find("***Featured Projects***")
+        stats_section_index = content.find("***Stats***")
+        
+        # Determine the nearest next section
+        next_section_index = None
+        if featured_projects_index > marker_index:
+            next_section_index = featured_projects_index
+        if stats_section_index > marker_index and (next_section_index is None or stats_section_index < next_section_index):
+            next_section_index = stats_section_index
+        
+        if next_section_index:
+            # Get content from the next section to the end
+            after_stats = content[next_section_index:]
         else:
-            after_stats = ""
+            # If we can't find a known next section, look for a blank line followed by anything
+            next_blank_line = re.search(r'\n\s*\n', content[marker_index:])
+            if next_blank_line:
+                after_stats = content[marker_index + next_blank_line.start():]
+            else:
+                after_stats = ""
         
         # Create new README content
-        new_content = before_marker + "\n\n" + generate_stats_markdown() + after_stats
+        new_content = before_marker + "\n\n" + generate_stats_markdown() + "\n\n" + after_stats
         
         # Write the new content
         with open(README_PATH, 'w', encoding='utf-8') as f:
