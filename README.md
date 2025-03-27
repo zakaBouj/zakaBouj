@@ -17,11 +17,11 @@
 
 ## GitHub Stats
 
-![Stars](https://img.shields.io/badge/Stars-99999-yellow?style=flat&logo=github)
-![Commits](https://img.shields.io/badge/Commits-99999-brightgreen?style=flat&logo=git)
-![Pull Requests](https://img.shields.io/badge/Pull%20Requests-99999-purple?style=flat&logo=github)
-![Issues](https://img.shields.io/badge/Issues-99999-red?style=flat&logo=github)
-![Contributions (Year)](https://img.shields.io/badge/Contributions-99999-blueviolet?style=flat&logo=github)
+![Stars](https://img.shields.io/badge/Stars-0-yellow?style=flat&logo=github)
+![Commits](https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git)
+![Pull Requests](https://img.shields.io/badge/Pull%20Requests-101-purple?style=flat&logo=github)
+![Issues](https://img.shields.io/badge/Issues-130-red?style=flat&logo=github)
+![Contributions (Year)](https://img.shields.io/badge/Contributions-955-blueviolet?style=flat&logo=github)
 
 
 ***Stats***
