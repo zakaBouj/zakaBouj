@@ -8,21 +8,19 @@
   <strong>Second Year CS Student @ Frankfurt UAS | Software Developer @ Digital David AG | Programmer | Learner</strong>
 </p>
 
+
 <p align="center">
   <a href="https://github.com/zakaBouj?tab=repositories"><img src="https://img.shields.io/badge/Stars-0-yellow?style=flat&logo=github" alt="Stars"></a>
   <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git" alt="Commits"></a>
   <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-101-purple?style=flat&logo=github" alt="PRs"></a>
   <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-130-red?style=flat&logo=github" alt="Issues"></a>
-  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-959-blueviolet?style=flat&logo=github" alt="Contributions"></a>
+  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-961-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 
-</br>
 
 <p align="center">
   🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.
 </p>
-
-</br>
 
 ***Featured Projects***
 
