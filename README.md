@@ -7,35 +7,18 @@
 <p align="center">
   <strong>Second Year CS Student @ Frankfurt UAS | Software Developer @ Digital David AG | Programmer | Learner</strong>
 </p>
-  
-<p align="center">
-  🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.
-</p>
-
-<!-- Live Github Stats -->
 
 
 <div align="center">
 
-### 💻 GitHub Activity & Contributions
-
-[![Stars](https://img.shields.io/badge/⭐%20Stars-0-yellow?style=for-the-badge&logo=github)](https://github.com/zakaBouj?tab=repositories)
-[![Commits](https://img.shields.io/badge/🔄%20Commits-2116-brightgreen?style=for-the-badge&logo=git)](https://github.com/zakaBouj)
-
-**Collaborative Development**
+[![Stars](https://img.shields.io/badge/Stars-99999-yellow?style=for-the-badge&logo=github)](https://github.com/zakaBouj?tab=repositories)
+[![Commits](https://img.shields.io/badge/Commits-99999-brightgreen?style=for-the-badge&logo=git)](https://github.com/zakaBouj)
 
 [![Pull Requests](https://img.shields.io/badge/PRs-101-purple?style=flat&logo=github)](https://github.com/pulls)
 [![Issues](https://img.shields.io/badge/Issues-130-red?style=flat&logo=github)](https://github.com/issues)
 [![Year Contributions](https://img.shields.io/badge/2025%20Contributions-956-blueviolet?style=flat&logo=github)](https://github.com/zakaBouj)
 
 </div>
-
-
-***Stats***
-
-![zakaBouj's Stats](https://github-readme-stats.vercel.app/api?username=zakaBouj&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
-![zakaBouj's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=zakaBouj&theme=vue-dark&show_icons=true&hide_border=true&layout=compact)
-
 
 </br>
 

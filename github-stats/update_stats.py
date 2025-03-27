@@ -311,12 +311,8 @@ def generate_stats_markdown():
     markdown = """
 <div align="center">
 
-### 💻 GitHub Activity & Contributions
-
-[![Stars](https://img.shields.io/badge/⭐%20Stars-{stars}-yellow?style=for-the-badge&logo=github)](https://github.com/{USER_NAME}?tab=repositories)
-[![Commits](https://img.shields.io/badge/🔄%20Commits-{total_commits}-brightgreen?style=for-the-badge&logo=git)](https://github.com/{USER_NAME})
-
-**Collaborative Development**
+[![Stars](https://img.shields.io/badge/Stars-{stars}-yellow?style=for-the-badge&logo=github)](https://github.com/{USER_NAME}?tab=repositories)
+[![Commits](https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=for-the-badge&logo=git)](https://github.com/{USER_NAME})
 
 [![Pull Requests](https://img.shields.io/badge/PRs-{pull_requests}-purple?style=flat&logo=github)](https://github.com/pulls)
 [![Issues](https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github)](https://github.com/issues)
@@ -333,40 +329,58 @@ def update_readme():
         with open(README_PATH, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Find the stats marker
-        marker_index = content.find(STATS_MARKER)
+        # Find the <p> tag that contains the "Second Year CS Student" text
+        student_developer_paragraph = '<p align="center">\n  <strong>Second Year CS Student @ Frankfurt UAS | Software Developer @ Digital David AG'
         
-        if marker_index == -1:
-            print("Stats marker not found in README")
-            return False
+        # Find this paragraph
+        student_paragraph_index = content.find(student_developer_paragraph)
         
-        # Get the content before the marker
-        before_marker = content[:marker_index + len(STATS_MARKER)]
+        if student_paragraph_index == -1:
+            # Fallback to the stats marker if we can't find the paragraph
+            marker_index = content.find(STATS_MARKER)
+            
+            if marker_index == -1:
+                print("Stats marker not found in README")
+                return False
+                
+            # Get the content before the marker
+            before_content = content[:marker_index + len(STATS_MARKER)]
+        else:
+            # Find the end of the paragraph (</p>)
+            paragraph_end_index = content.find('</p>', student_paragraph_index)
+            
+            if paragraph_end_index == -1:
+                print("Could not find the end of student/developer paragraph")
+                return False
+                
+            # Get the content before our insertion point (after the </p>)
+            before_content = content[:paragraph_end_index + 4]  # +4 for "</p>"
         
+        # Find the next section after our insertion point
+        next_content_start = before_content.rfind("\n\n")
+        if next_content_start == -1:
+            next_content_start = len(before_content)
+            
         # Find the next section after our stats (look for '***Featured Projects***' or any other section heading)
         featured_projects_index = content.find("***Featured Projects***")
         stats_section_index = content.find("***Stats***")
         
         # Determine the nearest next section
         next_section_index = None
-        if featured_projects_index > marker_index:
+        if featured_projects_index > next_content_start:
             next_section_index = featured_projects_index
-        if stats_section_index > marker_index and (next_section_index is None or stats_section_index < next_section_index):
+        if stats_section_index > next_content_start and (next_section_index is None or stats_section_index < next_section_index):
             next_section_index = stats_section_index
         
         if next_section_index:
             # Get content from the next section to the end
             after_stats = content[next_section_index:]
         else:
-            # If we can't find a known next section, look for a blank line followed by anything
-            next_blank_line = re.search(r'\n\s*\n', content[marker_index:])
-            if next_blank_line:
-                after_stats = content[marker_index + next_blank_line.start():]
-            else:
-                after_stats = ""
+            # If we can't find a known next section, use everything after the current paragraph
+            after_stats = content[paragraph_end_index + 4:]
         
         # Create new README content
-        new_content = before_marker + "\n\n" + generate_stats_markdown() + "\n\n" + after_stats
+        new_content = before_content + "\n\n" + generate_stats_markdown() + "\n\n" + after_stats
         
         # Write the new content
         with open(README_PATH, 'w', encoding='utf-8') as f:
