@@ -62,13 +62,13 @@ def get_user_stats():
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data")
         return {
-            'repos': 95,
-            'stars': 342,
-            'forks': 0,
-            'followers': 196,
-            'pull_requests': 70,
-            'issues': 89,
-            'contributed_to': 133
+            'repos': 99999,
+            'stars': 99999,
+            'forks': 99999,
+            'followers': 99999,
+            'pull_requests': 99999,
+            'issues': 99999,
+            'contributed_to': 99999
         }
     
     variables = {'username': USER_NAME}
@@ -108,11 +108,11 @@ def get_contributions():
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data for contributions")
         return {
-            'commits_year': 65,
-            'total_contributions_year': 76,
-            'pull_requests_year': 70,
-            'issues_year': 89,
-            'reviews_year': 0
+            'commits_year': 99999,
+            'total_contributions_year': 99999,
+            'pull_requests_year': 99999,
+            'issues_year': 99999,
+            'reviews_year': 99999
         }
     
     # Get current date and date from 1 year ago
@@ -169,7 +169,7 @@ def get_total_commits():
     # Sample data for local testing without a token
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data for total commits")
-        return {'total_commits': 2116, 'total_commits_year': 628}
+        return {'total_commits': 99999, 'total_commits_year': 99999}
     
     # Get current date and date for 2025
     today = datetime.now()
@@ -302,7 +302,7 @@ def generate_stats_markdown():
     user_stats = get_user_stats()
     contribution_stats = get_contributions()
     commit_stats = get_total_commits()
-    loc_stats = {'lines_added': 523178, 'lines_deleted': 76902, 'net_lines': 446276}
+    loc_stats = {'lines_added': 99999, 'lines_deleted': 99999, 'net_lines': 99999}
     
     # Combine all stats
     stats = {**user_stats, **contribution_stats, **commit_stats, **loc_stats}

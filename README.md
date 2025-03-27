@@ -17,15 +17,15 @@
 
 ## GitHub Stats
 
-![Repositories](https://img.shields.io/badge/Repos-2-blue?style=flat&logo=github) ![Contributed](https://img.shields.io/badge/Contributed-15-blue?style=flat&logo=github) | ![Stars](https://img.shields.io/badge/Stars-0-yellow?style=flat&logo=github)
+![Repositories](https://img.shields.io/badge/Repos-99999-blue?style=flat&logo=github) ![Contributed](https://img.shields.io/badge/Contributed-99999-blue?style=flat&logo=github) | ![Stars](https://img.shields.io/badge/Stars-99999-yellow?style=flat&logo=github)
 
-![Commits](https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git) | ![Followers](https://img.shields.io/badge/Followers-1-lightgrey?style=flat&logo=github)
+![Commits](https://img.shields.io/badge/Commits-99999-brightgreen?style=flat&logo=git) | ![Followers](https://img.shields.io/badge/Followers-99999-lightgrey?style=flat&logo=github)
 
-![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-446276-informational?style=flat&logo=github) (![Added](https://img.shields.io/badge/+523178-success?style=flat&logo=github) ![Deleted](https://img.shields.io/badge/-76902-critical?style=flat&logo=github))
+![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-99999-informational?style=flat&logo=github) (![Added](https://img.shields.io/badge/+99999-success?style=flat&logo=github) ![Deleted](https://img.shields.io/badge/-99999-critical?style=flat&logo=github))
 
-![Pull Requests](https://img.shields.io/badge/Pull%20Requests-101-purple?style=flat&logo=github) | ![Issues](https://img.shields.io/badge/Issues-130-red?style=flat&logo=github) | ![Reviews](https://img.shields.io/badge/Reviews-18-blue?style=flat&logo=github)
+![Pull Requests](https://img.shields.io/badge/Pull%20Requests-99999-purple?style=flat&logo=github) | ![Issues](https://img.shields.io/badge/Issues-99999-red?style=flat&logo=github) | ![Reviews](https://img.shields.io/badge/Reviews-99999-blue?style=flat&logo=github)
 
-![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-953-blueviolet?style=flat&logo=github) | ![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-751-green?style=flat&logo=git)
+![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-99999-blueviolet?style=flat&logo=github) | ![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-99999-green?style=flat&logo=git)
 
 
 ***Stats***
