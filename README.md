@@ -5,11 +5,11 @@
 </h1>
 
 <p align="center">
-  <strong>Second Year CS Student @ Frankfurt UAS | Developer | Programmer | Learner</strong>
+  <strong>Second Year CS Student @ Frankfurt UAS | Software Developer @ Digital David AG | Programmer | Learner</strong>
 </p>
   
 <p align="center">
-  🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend. 
+  🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.
 </p>
 
 <!-- Live Github Stats -->
