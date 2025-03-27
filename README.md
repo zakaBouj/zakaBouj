@@ -22,16 +22,16 @@
 ![Followers](https://img.shields.io/badge/Followers-1-lightgrey?style=flat&logo=github)
 ![Forks](https://img.shields.io/badge/Forks-0-orange?style=flat&logo=github)
 
-![Total Commits](https://img.shields.io/badge/Total%20Commits-65-brightgreen?style=flat&logo=git)
-![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-65-green?style=flat&logo=git)
-![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-76-blueviolet?style=flat&logo=github)
+![Total Commits](https://img.shields.io/badge/Total%20Commits-67-brightgreen?style=flat&logo=git)
+![Commits (Year)](https://img.shields.io/badge/Commits%20(Year)-67-green?style=flat&logo=git)
+![Contributions (Year)](https://img.shields.io/badge/Contributions%20(Year)-78-blueviolet?style=flat&logo=github)
 
 ![Pull Requests](https://img.shields.io/badge/Pull%20Requests-70-purple?style=flat&logo=github)
 ![Issues](https://img.shields.io/badge/Issues-89-red?style=flat&logo=github)
 ![PR Reviews](https://img.shields.io/badge/PR%20Reviews-0-blue?style=flat&logo=github)
 
-![Contributed To](https://img.shields.io/badge/Contributed%20To-9-teal?style=flat&logo=github)
-![Total Commits (2025)](https://img.shields.io/badge/Total%20Commits%20(2025)-628-darkgreen?style=flat&logo=git)
+![Contributed To](https://img.shields.io/badge/Contributed%20To-2-teal?style=flat&logo=github)
+![Total Commits (2025)](https://img.shields.io/badge/Total%20Commits%20(2025)-67-darkgreen?style=flat&logo=git)
 
 
 ***Stats***
