@@ -16,13 +16,9 @@
   <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-961-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 
-</br>
-
 <p align="center">
   🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.
 </p>
-
-</br>
 
 ***Featured Projects***
 
@@ -35,14 +31,9 @@
 
 🌍 [Address Validator](https://github.com/zakaBouj/AddressValidator): Enterprise-ready .NET service with Azure Maps integration and Entra ID authentication. Features clean modular architecture, robust validation algorithms, and comprehensive test suite with edge case coverage.
 
-</br>
-
 ***Technical Skills***
 
 C++, C#, Java, TypeScript, Python | WebAssembly, CUDA/OpenCL, Microservices | Azure, Docker, Kubernetes, GitHub Actions
-
-
-</br>
 
 > [!NOTE]
 > *Available for Software Engineering Internships* – **Summer 2025** (Jul 28 – Oct 12), **Winter 2026** (from Feb 16), **Summer 2026**.
