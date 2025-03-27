@@ -8,7 +8,6 @@
   <strong>Second Year CS Student @ Frankfurt UAS | Software Developer @ Digital David AG | Programmer | Learner</strong>
 </p>
 
-
 <p align="center">
   <a href="https://github.com/zakaBouj?tab=repositories"><img src="https://img.shields.io/badge/Stars-0-yellow?style=flat&logo=github" alt="Stars"></a>
   <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git" alt="Commits"></a>
@@ -17,10 +16,13 @@
   <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-961-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 
+</br>
 
 <p align="center">
   🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.
 </p>
+
+</br>
 
 ***Featured Projects***
 
@@ -37,7 +39,6 @@
 
 ***Technical Skills***
 
-
 C++, C#, Java, TypeScript, Python | WebAssembly, CUDA/OpenCL, Microservices | Azure, Docker, Kubernetes, GitHub Actions
 
 
@@ -46,7 +47,6 @@ C++, C#, Java, TypeScript, Python | WebAssembly, CUDA/OpenCL, Microservices | Az
 > [!NOTE]
 > *Available for Software Engineering Internships* – **Summer 2025** (Jul 28 – Oct 12), **Winter 2026** (from Feb 16), **Summer 2026**.
 > *I’m excited to bring my full-stack and systems experience to a dynamic team and help build impactful software during these periods.*
-
 
 <p align="center">
   <a href="https://www.linkedin.com/in/zakaria-boujana/">
