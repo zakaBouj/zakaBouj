@@ -35,7 +35,7 @@
 
 ***Technical Skills***
 
-C/C++, C#, Java, TypeScript, Python | Blazor, React, Svelte | WebAssembly, CUDA/OpenCL | Azure, Docker, Kubernetes, GitHub Actions
+C/C++, C#, Java, TypeScript, Python | Blazor, React, Svelte | WebAssembly <!--, CUDA/OpenCL--> | Azure, Docker <!--, Kubernetes-->, GitHub Actions
 
 > [!NOTE]
 > *Available for Software Engineering Internships* – **Summer 2025** (Jul 28 – Oct 12), **Winter 2026** (from Feb 16), **Summer 2026**.
