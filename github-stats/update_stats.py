@@ -310,7 +310,6 @@ def generate_stats_markdown():
     # Format stats into shield.io badges - all on one line for a compact layout
     markdown = """
 <p align="center">
-  <a href="https://github.com/{USER_NAME}?tab=repositories"><img src="https://img.shields.io/badge/Stars-{stars}-yellow?style=flat&logo=github" alt="Stars"></a>
   <a href="https://github.com/{USER_NAME}"><img src="https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=flat&logo=git" alt="Commits"></a>
   <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-{pull_requests}-purple?style=flat&logo=github" alt="PRs"></a>
   <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github" alt="Issues"></a>
