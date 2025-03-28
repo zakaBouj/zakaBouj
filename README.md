@@ -28,9 +28,9 @@
 [View Repo](link) • [Live Demo](link)
 -->
 
-🛰️ [DroneDeck](https://github.com/Code-Hauptwache/DroneDeck): Java-based drone monitoring platform leveraging multi-threading to process 500+ telemetry points with 15+ service components. Implemented concurrent data streams (60% faster processing) and MVC architecture with comprehensive test coverage.
+🛰️ [DroneDeck](https://github.com/Code-Hauptwache/DroneDeck): Java-based drone monitoring platform using multi-threading to process 500+ telemetry points across 15+ service components. Features 60% faster concurrent data stream processing, MVC architecture, and JUnit test coverage.
 
-🌍 [Address Validator](https://github.com/zakaBouj/AddressValidator): Enterprise-ready .NET service with Azure Maps integration and Entra ID authentication. Features clean modular architecture, robust validation algorithms, and comprehensive test suite with edge case coverage.
+🌍 [Address Validator](https://github.com/zakaBouj/AddressValidator): Enterprise-ready .NET service integrating Azure Maps and Entra ID authentication. Built with clean modular architecture, xUnit test suite, and CI/CD via GitHub Actions for automated builds and testing.
 
 ***Technical Skills***
 
