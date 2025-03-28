@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-  <strong>Second Year CS Student @ Frankfurt UAS | Software Developer @ Digital David AG | Programmer | Learner</strong>
+  <strong>Second Year CS Student @ Frankfurt UAS | Software Developer @ Digital David AG | Striving to leave a positive Impact</strong>
 </p>
 
 
