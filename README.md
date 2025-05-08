@@ -13,7 +13,7 @@
   <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git" alt="Commits"></a>
   <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-104-purple?style=flat&logo=github" alt="PRs"></a>
   <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-130-red?style=flat&logo=github" alt="Issues"></a>
-  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-976-blueviolet?style=flat&logo=github" alt="Contributions"></a>
+  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-974-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 
 
