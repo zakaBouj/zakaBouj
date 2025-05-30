@@ -39,7 +39,7 @@
 C#/.NET, Java, Python, C/C++, TypeScript | Blazor, React, WebAssembly<!--, CUDA/OpenCL--> | Azure, Docker<!--, Kubernetes-->, GitHub Actions
 
 > [!NOTE]
-> *Available for Software Engineering Internships* – **Summer 2025** (Jul 28 – Oct 12), **Winter 2026** (from Feb 16, for up to 6 months), **Summer 2026**.
+> *Open to Software Engineering Internships starting from **February 16, 2026** (Spring 2026, up to 6 months), as well as **Summer 2026***
 > *I’m excited to bring my full-stack and systems experience to a dynamic team and help build impactful software during these periods.*
 
 <p align="center">
