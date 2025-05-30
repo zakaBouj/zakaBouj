@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>
-    Second Year CS Student @ Frankfurt UAS | Incoming SWE Intern @ Bloomberg | Software Developer @ Digital David AG | Striving to leave a positive Impact
+    Second Year CS Student @ Frankfurt UAS | Incoming SWE Intern @ Bloomberg | Software Developer @ Digital David AG
   </strong>
 </p>
 
