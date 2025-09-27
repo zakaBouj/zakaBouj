@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>
-    Second Year CS Student @ Frankfurt UAS | Incoming SWE Intern @ Bloomberg | Software Developer @ Digital David AG
+    SWE Intern @ Bloomberg | Third Year CS Student @ Frankfurt UAS
   </strong>
 </p>
 
@@ -19,9 +19,10 @@
 </p>
 
 
-<p align="center">
+<!-- <p align="center">
   🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.
 </p>
+-->
 
 ***Featured Projects***
 
@@ -36,7 +37,7 @@
 
 ***Technical Skills***
 
-C#/.NET, Java, Python, C/C++, TypeScript | Blazor, React, WebAssembly<!--, CUDA/OpenCL--> | Azure, Docker<!--, Kubernetes-->, GitHub Actions
+C/C++, C#/.NET, Java, Python | Blazor, React<!--, CUDA/OpenCL--> | Azure, Docker<!--, Kubernetes-->, GitHub Actions
 
 > [!NOTE]
 > *Open to Software Engineering Internships starting from **February 16, 2026** (Spring 2026, up to 6 months), as well as **Summer 2026***
