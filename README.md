@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  Currently developing intelligent code evaluation systems for CS education across European universities
+  Currently extending JACK e-assessment platform with advanced algorithm validation microservices for European universities.
 </p>
 
 <!-- <p align="center">
