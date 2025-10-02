@@ -18,6 +18,9 @@
   <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-893-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 
+<p align="center">
+  Currently developing intelligent code evaluation systems for CS education across European universities
+</p>
 
 <!-- <p align="center">
   🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.
