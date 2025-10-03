@@ -53,7 +53,4 @@ C/C++, C#/.NET, Java, Python | Blazor, React<!--, CUDA/OpenCL--> | Azure, Docker
   <a href="mailto:boujana.zakaria03@gmail.com">
     <img src="https://img.shields.io/badge/Personal-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
   </a>
-  <a href="mailto:zb@digitaldavid.io">
-    <img src="https://img.shields.io/badge/Work-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
-  </a>
 </p>
