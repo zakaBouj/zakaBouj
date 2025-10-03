@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  Currently extending JACK e-assessment platform with advanced algorithm validation microservices for European universities.
+  Currently extending JACK e-assessment platform with an algorithm validation microservice for European universities.
 </p>
 
 <!-- <p align="center">
@@ -40,11 +40,10 @@
 
 ***Technical Skills***
 
-C/C++, C#/.NET, Java, Python | Blazor, React<!--, CUDA/OpenCL--> | Azure, Docker<!--, Kubernetes-->, GitHub Actions
+C++, C#, Java, Python | .NET, Blazor, React | Azure, Docker, CI/CD
 
 > [!NOTE]
-> *Open to Software Engineering Internships starting from **February 16, 2026** (Spring 2026, up to 6 months), as well as **Summer 2026***
-> *I’m excited to bring my full-stack and systems experience to a dynamic team and help build impactful software during these periods.*
+> *Open to Software Engineering Internships in **2026**.*
 
 <p align="center">
   <a href="https://www.linkedin.com/in/zakaria-boujana/">
