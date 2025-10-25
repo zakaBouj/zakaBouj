@@ -22,21 +22,11 @@
   Currently extending JACK e-assessment platform with an algorithm validation microservice for European universities.
 </p>
 
-<!-- <p align="center">
-  🔭 Currently developing a traffic simulation platform using C++/WebAssembly with React/TypeScript frontend, focusing on distributed computing capabilities and GPU-accelerated rendering.
-</p>
--->
-
 ***Featured Projects***
 
-<!--
-🚦 Project Vision: A traffic simulation platform using C++/WebAssembly with React/TypeScript frontend and WebGL rendering.
-[View Repo](link) • [Live Demo](link)
--->
+🛰️ **[DroneDeck](https://github.com/Code-Hauptwache/DroneDeck):** Java-based drone monitoring platform using multi-threading to process 500+ telemetry points across 15+ service components. Features 60% faster concurrent data stream processing, MVC architecture, and JUnit test coverage.
 
-🛰️ [DroneDeck](https://github.com/Code-Hauptwache/DroneDeck): Java-based drone monitoring platform using multi-threading to process 500+ telemetry points across 15+ service components. Features 60% faster concurrent data stream processing, MVC architecture, and JUnit test coverage.
-
-🌍 [Address Validator](https://github.com/zakaBouj/AddressValidator): Enterprise-ready .NET service integrating Azure Maps and Entra ID authentication. Built with clean modular architecture, xUnit test suite, and CI/CD via GitHub Actions for automated builds and testing.
+🌍 **[Address Validator](https://github.com/zakaBouj/AddressValidator):** Enterprise-ready .NET service integrating Azure Maps and Entra ID authentication. Built with clean modular architecture, xUnit test suite, and CI/CD via GitHub Actions for automated builds and testing.
 
 ***Technical Skills***
 
