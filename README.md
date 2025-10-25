@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  Currently extending JACK e-assessment platform with an algorithm validation microservice for European universities.
+  Currently building a Python microservice for JACK e-assessment to auto-validate algorithms, aiming for 50% TA workload reduction.
 </p>
 
 ***Featured Projects***
