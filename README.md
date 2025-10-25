@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>
-    Ex-Bloomberg | Software Developer | CS Student
+    Systems & Backend SWE | Returning @ Bloomberg | CS Student @ Frankfurt UAS
   </strong>
 </p>
 
@@ -40,7 +40,7 @@
 
 ***Technical Skills***
 
-C++, C#, Java, Python | .NET, Blazor, React | Azure, Docker, CI/CD
+C++ (17/20), C#, Java, Python | .NET, Blazor, React | Git, CI/CD, Azure, SQL, Linux, Google Test, GDB & Visual Studio Debugger
 
 > [!NOTE]
 > *Open to Software Engineering Internships in **2026**.*
