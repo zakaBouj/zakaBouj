@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>
-    SWE Intern @ Bloomberg | Third Year CS Student @ Frankfurt UAS
+    Ex-Bloomberg | Software Developer | CS Student
   </strong>
 </p>
 
