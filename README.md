@@ -43,3 +43,5 @@ C++ (17/20), C#, Java, Python | .NET, Blazor, React | Git, CI/CD, Azure, SQL, Li
     <img src="https://img.shields.io/badge/Personal-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
   </a>
 </p>
+
+<!--> test commit
