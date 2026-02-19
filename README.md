@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>
-    Systems & Backend SWE | Returning @ Bloomberg | CS Student @ Frankfurt UAS
+    Systems & Backend Software Engineer | Bloomberg (Part-Time) | CS @ Frankfurt UAS
   </strong>
 </p>
 
@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  Currently building a Python microservice for JACK e-assessment to auto-validate algorithms, aiming for 50% TA workload reduction.
+  Currently building an AI-powered call automation assistant that manages inbound client calls and delivers actionable summaries to business teams, streamlining communication and reducing manual workload.
 </p>
 
 ***Featured Projects***
@@ -33,7 +33,7 @@
 C++ (17/20), C#, Java, Python | .NET, Blazor, React | Git, CI/CD, Azure, SQL, Linux, Google Test, GDB & Visual Studio Debugger
 
 > [!NOTE]
-> *Open to Software Engineering Internships in **2026**.*
+> *Open to Software Engineering Internships in **2027**.*
 
 <p align="center">
   <a href="https://www.linkedin.com/in/zakaria-boujana/">
@@ -43,5 +43,3 @@ C++ (17/20), C#, Java, Python | .NET, Blazor, React | Git, CI/CD, Azure, SQL, Li
     <img src="https://img.shields.io/badge/Personal-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
   </a>
 </p>
-
-<!-- test commit --> 
