@@ -13,13 +13,14 @@
 
 <p align="center">
   <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Commits-2116-brightgreen?style=flat&logo=git" alt="Commits"></a>
-  <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-105-purple?style=flat&logo=github" alt="PRs"></a>
-  <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-130-red?style=flat&logo=github" alt="Issues"></a>
-  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-893-blueviolet?style=flat&logo=github" alt="Contributions"></a>
+  <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-82-purple?style=flat&logo=github" alt="PRs"></a>
+  <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-89-red?style=flat&logo=github" alt="Issues"></a>
+  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-333-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 
+
 <p align="center">
-  Currently building an AI-powered call automation assistant that manages inbound client calls and delivers actionable summaries to business teams, streamlining communication and reducing manual workload.
+  Building a dark pool / ATS simulator using the FIX protocol — order routing, venue fragmentation, and matching logic across simulated US equity venues.
 </p>
 
 ***Featured Projects***
