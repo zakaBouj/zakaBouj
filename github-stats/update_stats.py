@@ -165,137 +165,59 @@ def get_contributions():
     }
 
 def get_total_commits():
-    """Get estimate of total commits across all repositories"""
-    # Sample data for local testing without a token
+    """Get all-time commits and contributions by querying year by year (API max range is 1 year)"""
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data for total commits")
-        return {'total_commits': 99999, 'total_commits_year': 99999}
-    
-    # Get current date and date for 2025
+        return {'total_commits': 99999, 'total_commits_year': 99999, 'total_contributions_alltime': 99999}
+
+    query = """
+    query($username: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $username) {
+        contributionsCollection(from: $from, to: $to) {
+          totalCommitContributions
+          restrictedContributionsCount
+          contributionCalendar {
+            totalContributions
+          }
+        }
+      }
+    }
+    """
+
     today = datetime.now()
-    start_of_2025 = datetime(2025, 1, 1)
-    
-    # Use a more comprehensive approach to get ALL commits accurately
+    current_year = today.year
+    start_year = 2022  # zakaBouj account start year
+
+    total_commits = 0
+    total_commits_year = 0
+    total_contributions_alltime = 0
+
     try:
-        # First, get total contributions (this is more accurate than counting repos)
-        # We need to go back several years since GitHub founded
-        start_date = datetime(2008, 1, 1).strftime('%Y-%m-%dT%H:%M:%SZ')
-        end_date = today.strftime('%Y-%m-%dT%H:%M:%SZ')
-        
-        query = """
-        query($username: String!, $from: DateTime!, $to: DateTime!) {
-          user(login: $username) {
-            contributionsCollection(from: $from, to: $to) {
-              totalCommitContributions
-              commitContributionsByRepository {
-                repository {
-                  nameWithOwner
-                }
-                contributions {
-                  totalCount
-                }
-              }
-            }
-          }
+        tomorrow = today + timedelta(days=1)
+        for year in range(start_year, current_year + 1):
+            year_start = datetime(year, 1, 1).strftime('%Y-%m-%dT%H:%M:%SZ')
+            year_end = (datetime(year + 1, 1, 1) if year < current_year else tomorrow).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+            result = run_graphql_query(query, {'username': USER_NAME, 'from': year_start, 'to': year_end})
+
+            if result and 'data' in result and result['data']['user']:
+                col = result['data']['user']['contributionsCollection']
+                year_commits = col['totalCommitContributions'] + col['restrictedContributionsCount']
+                total_commits += year_commits
+                total_contributions_alltime += col['contributionCalendar']['totalContributions']
+                if year == current_year:
+                    total_commits_year = year_commits
+            else:
+                print(f"Failed to get data for year {year}")
+
+        return {
+            'total_commits': total_commits,
+            'total_commits_year': total_commits_year,
+            'total_contributions_alltime': total_contributions_alltime,
         }
-        """
-        
-        variables = {
-            'username': USER_NAME,
-            'from': start_date,
-            'to': end_date
-        }
-        
-        # Get commits from GraphQL API (this includes private repos if token has access)
-        result = run_graphql_query(query, variables)
-        
-        if result and 'data' in result:
-            contributions = result['data']['user']['contributionsCollection']
-            
-            # Count total commits across all repositories
-            total_commits = contributions['totalCommitContributions']
-            
-            # Add commits from repositories that the API might miss
-            # This is similar to Andrew6rant's add_archive function
-            for repo_contribution in contributions['commitContributionsByRepository']:
-                repo_name = repo_contribution['repository']['nameWithOwner']
-                # Only count repos that might not be included in the main count
-                if not repo_name.startswith(f"{USER_NAME}/"):
-                    total_commits += repo_contribution['contributions']['totalCount']
-        else:
-            # Fallback to REST API if GraphQL fails
-            total_commits = 0
-            page = 1
-            per_page = 100
-            all_repos = []
-            
-            # Get all repositories (with pagination)
-            while True:
-                url = f"https://api.github.com/users/{USER_NAME}/repos?page={page}&per_page={per_page}&type=all"
-                response = requests.get(url, headers=HEADERS)
-                
-                if response.status_code != 200 or not response.json():
-                    break
-                
-                repos = response.json()
-                if not repos:
-                    break
-                    
-                all_repos.extend(repos)
-                page += 1
-                
-                # Adjust limit based on user's repo count
-                if page > 10:  # Allow for up to 1000 repos
-                    break
-            
-            # Get commits from each repository
-            for repo in all_repos:
-                repo_name = repo['name']
-                commits_url = f"https://api.github.com/repos/{USER_NAME}/{repo_name}/commits?author={USER_NAME}&per_page=1"
-                commits_response = requests.get(commits_url, headers=HEADERS)
-                
-                if commits_response.status_code == 200:
-                    # Get the total from the Link header if it exists
-                    link_header = commits_response.headers.get('Link', '')
-                    if 'rel="last"' in link_header:
-                        match = re.search(r'page=(\d+)>; rel="last"', link_header)
-                        if match:
-                            total_commits += int(match.group(1))
-                    else:
-                        # If no Link header, count the results
-                        total_commits += len(commits_response.json())
-            
-            # If we still have a low count, use the sample data
-            if total_commits < 100:
-                total_commits = 2116
-        
-        # Now get commits for 2025
-        year_query = """
-        query($username: String!, $from: DateTime!, $to: DateTime!) {
-          user(login: $username) {
-            contributionsCollection(from: $from, to: $to) {
-              totalCommitContributions
-            }
-          }
-        }
-        """
-        
-        year_variables = {
-            'username': USER_NAME,
-            'from': start_of_2025.strftime('%Y-%m-%dT%H:%M:%SZ'),
-            'to': today.strftime('%Y-%m-%dT%H:%M:%SZ')
-        }
-        
-        year_result = run_graphql_query(year_query, year_variables)
-        total_commits_year = 628  # Default
-        
-        if year_result and 'data' in year_result:
-            total_commits_year = year_result['data']['user']['contributionsCollection']['totalCommitContributions']
-        
-        return {'total_commits': total_commits, 'total_commits_year': total_commits_year}
     except Exception as e:
         print(f"Error getting commit data: {e}")
-        return {'total_commits': 2116, 'total_commits_year': 628}  # Return sample data on error
+        return {'total_commits': 0, 'total_commits_year': 0, 'total_contributions_alltime': 0}
 
 def generate_stats_markdown():
     """Generate Markdown for GitHub stats section"""
@@ -313,7 +235,7 @@ def generate_stats_markdown():
   <a href="https://github.com/{USER_NAME}"><img src="https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=flat&logo=git" alt="Commits"></a>
   <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-{pull_requests}-purple?style=flat&logo=github" alt="PRs"></a>
   <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github" alt="Issues"></a>
-  <a href="https://github.com/{USER_NAME}"><img src="https://img.shields.io/badge/Contributions-{total_contributions_year}-blueviolet?style=flat&logo=github" alt="Contributions"></a>
+  <a href="https://github.com/{USER_NAME}"><img src="https://img.shields.io/badge/Contributions-{total_contributions_alltime}-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 """.format(**stats)
 
