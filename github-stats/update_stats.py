@@ -45,10 +45,10 @@ def get_user_stats():
         followers {
           totalCount
         }
-        pullRequests {
+        pullRequests(states: [OPEN, CLOSED, MERGED]) {
           totalCount
         }
-        issues {
+        issues(states: [OPEN, CLOSED]) {
           totalCount
         }
         repositoriesContributedTo(contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY], first: 100, includeUserRepositories: false) {
