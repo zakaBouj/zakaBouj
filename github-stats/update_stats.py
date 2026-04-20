@@ -45,10 +45,10 @@ def get_user_stats():
         followers {
           totalCount
         }
-        pullRequests(states: [OPEN, CLOSED, MERGED]) {
+        pullRequests {
           totalCount
         }
-        issues(states: [OPEN, CLOSED]) {
+        issues {
           totalCount
         }
         repositoriesContributedTo(contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY], first: 100, includeUserRepositories: false) {
@@ -165,10 +165,16 @@ def get_contributions():
     }
 
 def get_total_commits():
-    """Get all-time commits and contributions by querying year by year (API max range is 1 year)"""
+    """Get all-time commits, contributions, PRs, issues by querying year by year (API max range is 1 year)"""
     if not GITHUB_TOKEN or GITHUB_TOKEN == '':
         print("No GitHub token provided, using sample data for total commits")
-        return {'total_commits': 99999, 'total_commits_year': 99999, 'total_contributions_alltime': 99999}
+        return {
+            'total_commits': 99999,
+            'total_commits_year': 99999,
+            'total_contributions_alltime': 99999,
+            'total_prs_alltime': 99999,
+            'total_issues_alltime': 99999,
+        }
 
     query = """
     query($username: String!, $from: DateTime!, $to: DateTime!) {
@@ -176,6 +182,8 @@ def get_total_commits():
         contributionsCollection(from: $from, to: $to) {
           totalCommitContributions
           restrictedContributionsCount
+          totalPullRequestContributions
+          totalIssueContributions
           contributionCalendar {
             totalContributions
           }
@@ -191,6 +199,8 @@ def get_total_commits():
     total_commits = 0
     total_commits_year = 0
     total_contributions_alltime = 0
+    total_prs_alltime = 0
+    total_issues_alltime = 0
 
     try:
         tomorrow = today + timedelta(days=1)
@@ -205,6 +215,8 @@ def get_total_commits():
                 year_commits = col['totalCommitContributions'] + col['restrictedContributionsCount']
                 total_commits += year_commits
                 total_contributions_alltime += col['contributionCalendar']['totalContributions']
+                total_prs_alltime += col['totalPullRequestContributions']
+                total_issues_alltime += col['totalIssueContributions']
                 if year == current_year:
                     total_commits_year = year_commits
             else:
@@ -214,10 +226,18 @@ def get_total_commits():
             'total_commits': total_commits,
             'total_commits_year': total_commits_year,
             'total_contributions_alltime': total_contributions_alltime,
+            'total_prs_alltime': total_prs_alltime,
+            'total_issues_alltime': total_issues_alltime,
         }
     except Exception as e:
         print(f"Error getting commit data: {e}")
-        return {'total_commits': 0, 'total_commits_year': 0, 'total_contributions_alltime': 0}
+        return {
+            'total_commits': 0,
+            'total_commits_year': 0,
+            'total_contributions_alltime': 0,
+            'total_prs_alltime': 0,
+            'total_issues_alltime': 0,
+        }
 
 def generate_stats_markdown():
     """Generate Markdown for GitHub stats section"""
@@ -233,8 +253,8 @@ def generate_stats_markdown():
     markdown = """
 <p align="center">
   <a href="https://github.com/{USER_NAME}"><img src="https://img.shields.io/badge/Commits-{total_commits}-brightgreen?style=flat&logo=git" alt="Commits"></a>
-  <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-{pull_requests}-purple?style=flat&logo=github" alt="PRs"></a>
-  <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-{issues}-red?style=flat&logo=github" alt="Issues"></a>
+  <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-{total_prs_alltime}-purple?style=flat&logo=github" alt="PRs"></a>
+  <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-{total_issues_alltime}-red?style=flat&logo=github" alt="Issues"></a>
   <a href="https://github.com/{USER_NAME}"><img src="https://img.shields.io/badge/Contributions-{total_contributions_alltime}-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 """.format(**stats)
