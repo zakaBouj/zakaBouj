@@ -12,10 +12,10 @@
 
 
 <p align="center">
-  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Commits-2152-brightgreen?style=flat&logo=git" alt="Commits"></a>
+  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Commits-2153-brightgreen?style=flat&logo=git" alt="Commits"></a>
   <a href="https://github.com/pulls"><img src="https://img.shields.io/badge/PRs-83-purple?style=flat&logo=github" alt="PRs"></a>
   <a href="https://github.com/issues"><img src="https://img.shields.io/badge/Issues-90-red?style=flat&logo=github" alt="Issues"></a>
-  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-2356-blueviolet?style=flat&logo=github" alt="Contributions"></a>
+  <a href="https://github.com/zakaBouj"><img src="https://img.shields.io/badge/Contributions-2357-blueviolet?style=flat&logo=github" alt="Contributions"></a>
 </p>
 
 
